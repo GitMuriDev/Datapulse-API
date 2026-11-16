@@ -1,0 +1,27 @@
+# Arquivos de variáveis sensíveis
+.env
+.env.local
+*.env
+
+# Ambientes Virtuais Python
+venv/
+env/
+ENV/
+.venv/
+
+# Caches do Python e arquivos temporários
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Banco de dados local/arquivos temporários do SQLite/Postgres (se houver)
+*.sqlite3
+*.db
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+.DS_Store
