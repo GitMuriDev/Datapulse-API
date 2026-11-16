@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
     formData.append('username', email);
     formData.append('password', password);
 
-    const { data } = await api.post('/auth/login', formData, {
+    const { data } = await api.post('/auth/login/access-token', formData, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     });
 
@@ -43,7 +43,7 @@ export function AuthProvider({ children }) {
 
   async function register(fullName, email, password) {
     await api.post('/users/', {
-      full_name: fullName,
+      user_name: fullName,
       email,
       password,
     });

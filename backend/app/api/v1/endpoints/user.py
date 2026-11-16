@@ -109,6 +109,18 @@ def delete_user(
 
 # FIMCRUD
 
+# Obter perfil do usuário logado (Busca por e-mail/token) - DEVE VIR ANTES DE /{user_id}
+@router.get(
+    "/me",
+    response_model=UserResponse,
+    summary="Obter perfil do usuário logado",
+    description="Retorna os dados cadastrais do usuário atualmente autenticado via Token JWT.",
+)
+def get_user_me(
+    current_user: User = Depends(deps.get_current_user),
+) -> User:
+    return current_user
+
 # Buscar por ID
 @router.get(
     "/{user_id}",
